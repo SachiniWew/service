@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Background</title>
+    <style>
+        body {
+            background-image: 0;
+            background-size: cover;
+            margin: 0;
+            height: 100vh;
+            background-repeat: no-repeat;
+            font-family: Tahoma, sans-serif; /* Changed to Tahoma */
+        }
+
+        #afy {
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            right: 8%;
+            top: 22%;
+            width: 350px;
+            z-index: 4;
+        }
+        
+        #afy img {
+            width: 100%;
+            height: auto;
+        }
+        
+        #sn {
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 15%;
+            left: 6%;
+        }
+        
+        #sn h2 {
+            font-size: 100px;
+            font-family: Tahoma, sans-serif; /* Changed to Tahoma */
+            color: #444343;
+            font-weight: normal;
+            text-align: 0;
+            line-height: 0;
+            z-index: 2;
+        }
+        
+        #sn2 {
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 19.5%;
+            left: 18%;
+        }
+        
+        #sn2 h1 {
+            font-size: 48px;
+            font-family: Tahoma, sans-serif; /* Changed to Tahoma */
+            color: #444343;
+            font-weight: normal;
+            text-align: 0;
+            line-height: 0;
+            z-index: 2;
+        }
+		
+        #sn3 {
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 26.5%;
+            left: 18%;
+        }
+        
+        #sn3 h1 {
+            font-size: 48px;
+            font-family: Tahoma, sans-serif; /* Changed to Tahoma */
+            color: #444343;
+            font-weight: normal;
+            text-align: 0;
+            line-height: 0;
+            z-index: 2;
+        }
+		
+        #p1 {  /* Changed ID to p1 to match the HTML */
+            position: absolute; /* Added position: absolute */
+            top: 40%;          /* Adjusted top and right */
+            left: 6%;
+            width: 45%;
+        }
+
+        #p1 p {
+            font-size: 15px;
+            font-family: Tahoma, sans-serif;
+            color: #444343;
+            font-weight: normal;
+            text-align: left;
+            line-height: 1.5;  /* Added line-height for better readability */
+            z-index: 2;
+        }	
+		
+        #afgp {
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            right: 8%;
+            top: 50%;
+            width: 350px;
+            z-index: 6;
+        }
+        
+        #afgp img {
+            width: 100%;
+            height: auto;
+        }		
+
+        #freight {
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            right: 8%;
+            top: 35%;
+            width: 351px;
+            z-index: 5;
+        }
+        
+        #freight img {
+            width: 100%;
+            height: auto;
+        }	
+
+        #air {
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            right: 17.5%;
+            top: 27%;
+            width: 100px;
+            z-index: 5;
+        }
+        
+        #air img {
+            width: 100%;
+            height: auto;
+        }			
+		
+
+.animated-button {
+  position: absolute;
+  top: 65%;
+  left: 5.5%;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 16px 36px;
+  border: 4px solid;
+  border-color: transparent;
+  font-size: 16px;
+  background-color: inherit;
+  border-radius: 100px;
+  font-weight: 600;
+  color: rgb(35, 35, 35);
+  box-shadow: 0 0 0 2px rgb(33, 33, 32);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button svg {
+  position: absolute;
+  width: 24px;
+  fill: rgb(0, 0, 0);
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .arr-1 {
+  right: 16px;
+}
+
+.animated-button .arr-2 {
+  left: -25%;
+}
+
+.animated-button .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: rgb(255, 204, 0);
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .text {
+  position: relative;
+  z-index: 1;
+  transform: translateX(-12px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button:hover {
+  box-shadow: 0 0 0 12px transparent;
+  color: #000000;
+  border-radius: 12px;
+}
+
+.animated-button:hover .arr-1 {
+  right: -25%;
+}
+
+.animated-button:hover .arr-2 {
+  left: 16px;
+}
+
+.animated-button:hover .text {
+  transform: translateX(12px);
+}
+
+.animated-button:hover svg {
+  fill: #000000;
+}
+
+.animated-button:active {
+  scale: 1;
+  box-shadow: 0 0 0 10px rgb(255, 204, 0);
+}
+
+.animated-button:hover .circle {
+  width: 220px;
+  height: 220px;
+  opacity: 1;
+}
+
+	.l1 {
+  border-left: 1px solid gray;
+  height: 433px;
+  position: absolute;
+  left: 58%;
+  top: 19%;
+  margin: 0;
+}
+
+    #l2 {
+  border-left: 1px solid gray;
+  position: absolute;
+  left: 0%;
+  top: 90%;
+  margin: 0;
+}
+
+
+    </style>
+</head>
+<body>
+
+<div id="afy">
+    <img src="AFY.png" alt="afy">
+</div>
+
+<div id="sn">
+    <h2>
+        06.
+    </h2>
+</div>
+
+<div id="sn2">
+    <h1>
+        3PL AND 4PL
+    </h1>
+</div>
+
+<div id="sn3">
+    <h1>
+        SOLUTIONS
+    </h1>
+</div>
+
+<div id="p1">
+    <p>
+        Looking for dependable transportation for urgent cargo over long distances 
+and various terrains? Our services ensure exceptional connectivity, timely 
+deliveries, and cost efficiency, backed by our solid collaborations with top global 
+airlines and air freight providers.
+    </p>
+</div>
+
+<div id="afgp">
+    <img src="afgp.png" alt="afgp">
+</div>
+
+<div id="freight">
+    <img src="freight.png" alt="freight">
+</div>
+
+<div id="air">
+    <img src="AIR.png" alt="air">
+</div>
+
+<button class="animated-button">
+  <svg viewBox="0 0 24 24" class="arr-2">
+    <path
+      d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+    ></path>
+  </svg>
+  <span class="text">REACH OUT</span>
+  <span class="circle"></span>
+  <svg viewBox="0 0 24 24" class="arr-1">
+    <path
+      d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+    ></path>
+  </svg>
+</button>
+
+<div class="l1"></div>
+
+<div id="l2">
+	<hr style="width: 1261px;">
+</div>
+
+</body>
+</html>

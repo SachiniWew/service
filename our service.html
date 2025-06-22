@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Service</title>
+    <style>
+        body {
+            background-image: url('s1bg.png');
+            background-size: cover;
+            margin: 0;
+            height: 100vh;
+            background-repeat: no-repeat;
+        }
+
+        #gp1 {
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            right: 11%;
+            top: 50%;
+            width: 950px;
+            z-index: 4;
+        }
+        
+        #gp1 img {
+            width: 100%;
+            height: auto;
+        }
+        
+        #osvs {
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: -15%;
+            right: 15%;
+        }
+        
+        #osvs h1 {
+            font-size: 320px;
+            font-family: 'Agency FB', sans-serif;
+            color: #ffcc00;
+            font-weight: 10px;
+            text-align: left;
+            line-height: 1.2;
+            z-index: 2;
+        }
+        
+        #osvs2 {
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: -1%;
+            right: 25%;
+        }
+        
+        #osvs2 h1 {
+            font-size: 120px;
+            font-family: 'Agency FB', sans-serif;
+            color: black;
+            font-weight: 10px;
+            text-align: left;
+            line-height: 1.2;
+            z-index: 2;
+        }
+
+        #lry {
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            right: 0%;
+            top: 130%;
+            width: 1700px;
+            opacity: 15%;
+            z-index: 1;
+        }
+        
+        #lry img {
+            width: 100%;
+            height: auto;
+        }
+        
+        #slidframe {
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            left: 0%;
+            top: 130%;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+        }
+                
+        .frame-container {
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .frame-container.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        #airframe {
+            top: 230%;
+        }
+                
+        #seaframe {
+            top: 320%;
+        }
+        
+        #proframe {
+            top: 410%;
+        }
+                
+        #whframe {
+            top: 500%;
+        }
+                
+        #chbframe {
+            top: 590%;
+        }
+                
+        #plframe {
+            top: 680%;
+        }
+                
+        #intcrframe {
+            top: 770%;
+        }
+                
+        #transframe {
+            top: 860%;
+        }
+        
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Agency+FB&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="gp1">
+    <img src="gp1.png" alt="gp1">
+</div>
+
+<div id="osvs">
+    <h1>
+        SERVICE
+    </h1>
+</div>
+
+<div id="osvs2">
+    <h1>
+        OUR
+    </h1>
+</div>
+
+<div id="lry">
+    <img src="lry1.png" alt="lry">
+</div>
+
+
+
+<div id="airframe" class = "frame-container">
+    <iframe src="01.AIRF.html" width="100%" height="100%" frameborder="0"></iframe>
+</div>
+
+<div id="seaframe" class = "frame-container">
+    <iframe src="02.SEAF.html" width="100%" height="100%" frameborder="0"></iframe>
+</div>
+
+<div id="proframe" class = "frame-container">
+    <iframe src="03.PROCA.html" width="100%" height="100%" frameborder="0"></iframe>
+</div>
+
+<div id="whframe" class = "frame-container">
+    <iframe src="04.wh.html" width="100%" height="100%" frameborder="0"></iframe>
+</div>
+
+<div id="chbframe" class = "frame-container">
+    <iframe src="05.chb.html" width="100%" height="100%" frameborder="0"></iframe>
+</div>
+
+<div id="plframe" class = "frame-container">
+    <iframe src="06.34PL.html" width="100%" height="100%" frameborder="0"></iframe>
+</div>
+
+<div id="intcrframe" class = "frame-container">
+    <iframe src="07.INTCR.html" width="100%" height="100%" frameborder="0"></iframe>
+</div>
+
+<div id="transframe" class = "frame-container">
+    <iframe src="08.TRANS.html" width="100%" height="100%" frameborder="0"></iframe>
+</div>
+
+<script>
+    const elements = document.querySelectorAll('.frame-container');
+    const animationDuration = 1000; // You can adjust this value (in milliseconds)
+    const scrollSpeed = 0.7; // You can adjust this value
+    let isScrolling = false;
+
+    function checkElements() {
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (elementTop < windowHeight * 0.8) {
+                element.classList.add('show');
+            } else {
+                element.classList.remove('show');
+            }
+        });
+    }
+
+    function smoothScroll(targetElement) {
+        if (isScrolling) return;
+        isScrolling = true;
+
+        const startPosition = window.scrollY;
+        const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+        const distance = targetPosition - startPosition;
+        let startTime = null;
+
+        function animateScroll(currentTime) {
+            if (startTime === null) startTime = currentTime;
+            const timePassed = currentTime - startTime;
+            const progress = Math.min(timePassed / animationDuration, 1); // 0 to 1
+
+            const easing = easeOutCubic(progress); // Use an easing function
+            window.scrollTo(0, startPosition + distance * easing * scrollSpeed); // Apply scroll speed
+
+            if (progress < 1) {
+                requestAnimationFrame(animateScroll);
+            } else {
+                isScrolling = false;
+            }
+        }
+
+        requestAnimationFrame(animateScroll);
+    }
+
+    function easeOutCubic(t) {  // Easing function for smoother animation
+        return (--t) * t * t + 1;
+    }
+
+
+    window.addEventListener('scroll', checkElements);
+    checkElements();
+
+    // Example of triggering smooth scroll.  You'd need to adapt this to your specific needs
+    // For example, you might have links that, when clicked, trigger this scroll:
+    // const targetElement = document.getElementById('someElementId');
+    // targetElement.addEventListener('click', () => {
+    //   smoothScroll(targetElement);
+    // });
+</script>
+</body>
+</html>
+
+
+
+
